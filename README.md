@@ -16,7 +16,7 @@ where `CITY` is the key of the dict in the added region and `FOLDER` is the path
 
 Unfortunately, The commented products in the dict called `products` in function `prepare_download` did not download successfully.
 
-## Processing Data with Harp: Creating a common grid
+## Processing Data with Harp: Creating a Common Grid
 The downloaded data consist of the orbit of the satellite when it passes the specified region. Thus, it contains much more spatial information than the one we are interested in. Furthermore, the locations in the array containing the measurements are not always the same, which means that we want further process the data to have a common grid always representing the same latitude and longitudes.
 
 The following script uses the library [Harp](http://stcorp.github.io/harp/doc/html/python.html) to filter our area of interest and create a common grid between different dates and products.
