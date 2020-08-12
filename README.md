@@ -7,7 +7,7 @@ Note that L2 products are processed measurements provided by [ESA](https://senti
 
 ## Contents
 - [Download Data](#Download-Data) (using [sentinelsat](https://sentinelsat.readthedocs.io/en/stable/api.html))
-- [Create a Common Grid](#Processing-Data-with-Harp:-Creating-a-Common-Grid) (using [Harp](http://stcorp.github.io/harp/doc/html/python.html))
+- [Create a Common Grid](#Processing-Data-with-Harp-to-Create-a-Common-Grid) (using [Harp](http://stcorp.github.io/harp/doc/html/python.html))
 - [Stack Grids into Time Dimension](#Stack-Grids-into-Time-Dimension) (using [xarray](http://xarray.pydata.org/en/stable/why-xarray.html))
 
 ## Download Data
@@ -21,7 +21,7 @@ where `CITY` is the key of the dict in the added region and `FOLDER` is the path
 
 Unfortunately, The commented products in the dict called `products` in function `prepare_download` did not download successfully.
 
-## Processing Data with Harp: Creating a Common Grid
+## Processing Data with Harp to Create a Common Grid
 The downloaded data consist of the orbit of the satellite when it passes the specified region. Thus, it contains much more spatial information than the one we are interested in. Furthermore, the locations in the array containing the measurements are not always the same, which means that we want further process the data to have a common grid always representing the same latitude and longitude.
 
 The following script uses the library [Harp](http://stcorp.github.io/harp/doc/html/python.html) to filter our area of interest and create a common grid between different dates and products.
