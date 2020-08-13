@@ -15,6 +15,7 @@ Note that L2 products are processed measurements provided by [ESA](https://senti
 - [Download Data](#Download-Data) (using [sentinelsat](https://sentinelsat.readthedocs.io/en/stable/api.html))
 - [Create a Common Grid](#Processing-Data-with-Harp-to-Create-a-Common-Grid) (using [Harp](http://stcorp.github.io/harp/doc/html/python.html))
 - [Stack Grids into Time Dimension](#Stack-Grids-into-Time-Dimension) (using [xarray](http://xarray.pydata.org/en/stable/why-xarray.html))
+- [Data Summary](#Data-Summary)
 
 ## Download Data
 Sentinel-5P data need a user and password but by August 2020 it is still only a guest one: s5pguest/s5pguest
@@ -61,6 +62,26 @@ However, if you are using a notebook or a `ipython` (as myself with [Visual Stud
 ```
 python join_by_time_interactive.py
 ```
+
+## Data Summary
+
+Using the tools explained above I got the following data in the specified areas of interest. As an example, for Moscow's O3 in 2019, I downloaded 799 orbits (`download.py`), but only 481 contained data for the city bounding box (`mk_raster.py`), the other orbits contained only NaN values. However, there is more than one orbit per day since they overlap. Averaging the orbits of the same day gives us a total of 250 unique days, which means that there are many days in 2019 with no data... Note that CH4 is the product that has less available data from the ones below.
+
+City | Product | Unique Days | Orbits with Data | Total Orbits
+:----:|:----:|:----:|:----:|:----:|
+Moscow | L2__O3____ | 250 | 481 | 799
+Moscow | L2__NO2___ | 353 | 682 | 1062
+Moscow | L2__SO2___ | 324 | 559 | 1062
+Moscow | L2__CH4___ | 69 | 90 | 1061
+Istanbul | L2__O3____ | 250 | 358 | 390
+Istanbul | L2__NO2___ | 363 | 519 | 565
+Istanbul | L2__SO2___ | 356 | 506 | 565
+Istanbul | L2__HCHO__ | 354 | 503 | 564
+Berlin | L2__O3____ | 250 | 449 | 616
+Berlin | L2__NO2___ | 360 | 636 | 823
+Berlin | L2__SO2___ | 335 | 547 | 823
+Berlin | L2__CH4___ | 82 | 87 | 820
+Berlin | L2__HCHO__ | 340 | 566 | 822
 
 ## Disclaimer
 I am new to the field of air-quality measurements and satellite images, and it is also the first time using the tools mentioned above (harp & xarray). Part of the code might be wrong and many improvements could be done. I share this repo since I believe it could benefit both, new people trying to work with this data and myself, from your possible suggestions :)
