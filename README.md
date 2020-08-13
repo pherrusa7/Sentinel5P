@@ -65,7 +65,7 @@ python join_by_time_interactive.py
 
 ## Data Summary
 
-Using the tools explained above I got the following data in the specified areas of interest. As an example, for Moscow's O3 in 2019, I downloaded 799 orbits (`download.py`), but only 481 contained data for the city bounding box (`mk_raster.py`), the other orbits contained only NaN values. However, there is more than one orbit per day since they overlap. Averaging the orbits of the same day gives us a total of 250 unique days, which means that there are many days in 2019 with no data... Note that CH4 is the product that has less available data from the ones below.
+Using the tools explained above I got the following data in the specified areas of interest. As an example, for Moscow's O3 in 2019, I downloaded 799 orbits (`download.py`), but only 481 contained data for the city bounding box (`mk_raster.py`), the other orbits contained only NaN values. However, there is more than one orbit per day since they overlap. Averaging the orbits of the same day gives us a total of 250 unique days (`join_by_time_interactive.py`), which means that there are many days in 2019 with no data... Also, take into account that despite having data in one day, there are spatial locations for that day without data represented by NaNs. Note that CH4 is the product that has less available data from the ones below.
 
 City | Product | Unique Days | Orbits with Data | Total Orbits
 :----:|:----:|:----:|:----:|:----:|
