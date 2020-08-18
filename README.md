@@ -22,9 +22,9 @@ Sentinel-5P data need a user and password but by August 2020 it is still only a 
 
 To download automatically all products available for a certain region, add the region to the dict called `polys` in function `prepare_download` and use the following syntax:
 ```
-python download.py [-h] -c CITY -f FOLDER
+python download.py [-h] -c CITY -f FOLDER [-l LEVEL]
 ```
-where `CITY` is the key of the dict in the added region and `FOLDER` is the path to save the data
+where `CITY` is the key of the dict in the added region and `FOLDER` is the path to save the data. Use `LEVEL` to download either `L2` or `L1B` products (check the available products in the [official website](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-5p/products-algorithms)). The script is set to download data from Jan 1st, 2019 to Dec 31st, 2019, if you want data to be in another range, set the variable `date_range` in function `prepare_download` to de desired period.
 
 Unfortunately, The commented products in the dict called `products` in function `prepare_download` did not download successfully.
 
