@@ -48,6 +48,7 @@ def prepare_download(city, folder, level='L2', date_range=['20190101', '20191231
     """ download products defined in the bellow dict 'products' for the selected 'city'
         fill the dict 'products' from: https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-5p/products-algorithms
     """
+    print(f"Downloading {level} products of {city} in {folder}")
 
     # set api
     api = SentinelAPI('s5pguest', 's5pguest', api_url='https://s5phub.copernicus.eu/dhus/')
@@ -125,7 +126,7 @@ def main():
     if options.quiet:
         print("Downloading data for city %s in folder %s..." % (options.city, options.folder))
 
-    prepare_download(options.city, options.folder)
+    prepare_download(options.city, options.folder, options.level)
 
 if __name__ == "__main__":
     main()
