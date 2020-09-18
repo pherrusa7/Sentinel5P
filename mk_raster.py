@@ -77,7 +77,7 @@ def set_parser():
                          \'L2__AER_AI\', \'L2__AER_LH\'] ")
     parser.add_argument("-f", "--folder", type=str, required=False, default='../data/crop', 
                         help="Folder to save the data")
-    parser.add_argument("-f_src", "--folder_src", type=str, required=False, default='../data', 
+    parser.add_argument("-f_src", "--folder_src", type=str, required=False, default='../data_L2_air', 
                         help="Folder with L2 S-5P data")
     parser.add_argument("-d", "--degrees", type=float, required=False, default=0.01, 
                         help="pixel degrees for the grid")
@@ -94,8 +94,8 @@ def get_city_bbox(city):
     if city == 'Istanbul':
         city_bbox = [40.81000, 41.30500, 28.79400, 29.23000]
     elif city == 'Moscow':
-	city_bbox = [55.50600, 55.94200, 37.35800, 37.85300]   #  real [37.358, 55.506, 37.853, 55.942]
-    º  # city_bbox = [55.50600, 55.94200, 37.35700, 37.85400] #  old 
+        # city_bbox = [55.50600, 55.94200, 37.35700, 37.85400] #  old 
+	    city_bbox = [55.50600, 55.94200, 37.35800, 37.85300]   #  real [37.358, 55.506, 37.853, 55.942]
     elif city == 'Berlin':
         city_bbox = [52.35900, 52.85400, 13.18900, 13.62500]
     else:
