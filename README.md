@@ -73,6 +73,7 @@ Moscow | L2__O3____ | 250 | 481 | 799
 Moscow | L2__NO2___ | 353 | 682 | 1062
 Moscow | L2__SO2___ | 324 | 559 | 1062
 Moscow | L2__CH4___ | 69 | 90 | 1061
+Moscow | L2__HCHO__ | 336 | 600 | 1060
 Istanbul | L2__O3____ | 250 | 358 | 390
 Istanbul | L2__NO2___ | 363 | 519 | 565
 Istanbul | L2__SO2___ | 356 | 506 | 565

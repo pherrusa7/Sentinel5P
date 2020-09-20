@@ -330,24 +330,30 @@ def main():
     not_generated = []
 
     city, product = 'Moscow', 'L2__O3____'
-    folder = '../data/final_tensors'
-    folder_src = '../data'
-    folder_grid =  '../data/crop'
+    folder = '../data_L2_air/final_tensors'
+    folder_src = '../data_L2_air'
+    folder_grid =  '../data_L2_air/crop'
 
-    for city in ['Moscow', 'Istanbul', 'Berlin']:
-        for product in list(VAR_PRODUCT.keys()):
+    products = list(VAR_PRODUCT.keys())
+    cities = ['Moscow', 'Istanbul', 'Berlin']
+
+    print(f"The script will run over {len(cities)} cities: {cities} & {len(products)} products")
+    for city in cities:
+        for i, product in enumerate(products):
+            print(f"({(i+1)}/{len(product)}) product: {product} | {city}")
             try:
                 process(city, product, folder, folder_src, folder_grid)
-                print("")
+                print("--> done!")
             except:
                 not_generated.append(f'{city}/{product}')
     
     print(not_generated)
+
     """ 
     products that didn't have data in our area of interest:
     
-    ['Moscow/L2__CO____', 'Moscow/L2__HCHO__', 'Moscow/L2__CLOUD_', 
-    'Moscow/L2__AER_AI', 'Moscow/L2__AER_LH', 
+    ['Moscow/L2__CO____', 'Moscow/L2__CLOUD_', 'Moscow/L2__AER_AI', 
+    'Moscow/L2__AER_LH', 
 
     'Istanbul/L2__CO____', 'Istanbul/L2__CH4___', 'Istanbul/L2__CLOUD_', 
     'Istanbul/L2__AER_AI', 'Istanbul/L2__AER_LH',
@@ -359,3 +365,4 @@ def main():
 
 # %%
 main()
+# %%
